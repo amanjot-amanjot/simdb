@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+#include "generate_data.h"
 std::vector<std::vector<float>> generate_data(){
     std::vector<std::vector<float>> my_vector;
     std::random_device rd;
@@ -13,15 +14,5 @@ std::vector<std::vector<float>> generate_data(){
     my_vector.push_back(my_vector0);
 }
 return my_vector;
-}
-int main(){
- std::vector<std::vector<float>> my_vector=generate_data();
-for(int i=0;i<4;i++){
-    for(int j=0;j<8;j++){
-        std::cout << my_vector[i][j];
-        std::cout<<" ";
-
-    }
-}
 }
 

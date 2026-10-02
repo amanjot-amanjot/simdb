@@ -1,17 +1,10 @@
 #include <cmath>
 #include<iostream>
 #include "generate_data.h"
-
-float euclidean_distance(const std::vector<float> &v1, const std::vector<float> &v2){
-    float sum=0;
-    for(int i=0;i<v1.size();i++){
-         sum+=std::pow(v1[i]-v2[i],2);
-    }
-    return std::sqrt(sum);
-}
+#include "euclidean_distance.h"
 int main(){
     std::vector<float> querry_vector={2, 56, 43, 96, 12, 4, 19, 23};
-    std::vector<std::vector<float>> database=generate_data();
+    std::vector<std::vector<float>> database=generate_data(1000,8);
     int closest_vector_pos=0;
     float dist1=0;
     float dist_prev=euclidean_distance(database[0], querry_vector);
@@ -23,7 +16,7 @@ int main(){
         }
      }
     std::cout<<dist_prev<<std::endl;
-     std::cout<< closest_vector_pos;
+     std::cout<< closest_vector_pos<<std::endl;
      for (int i=0;i<querry_vector.size();i++){
      std::cout<< database[closest_vector_pos][i];
      std::cout<< " ";
